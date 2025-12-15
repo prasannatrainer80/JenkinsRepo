@@ -7,15 +7,16 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
+        stage('Verify Tools') {
             steps {
-                checkout scm
+                bat 'java -version'
+                bat 'mvn -version'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
     }
