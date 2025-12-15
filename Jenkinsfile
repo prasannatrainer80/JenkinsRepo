@@ -13,10 +13,15 @@ pipeline {
             }
         }
 
-       stage('Run App') {
-    	steps {
-        	bat 'java -jar target\\SbJenkinsDemo-0.0.1-SNAPSHOT.jar'
-    	}
-   }
+      stage('Run App') {
+    steps {
+        bat '''
+        for %%f in (target\\*-SNAPSHOT.jar) do (
+            start "" java -jar %%f
+        )
+        '''
+    }
+}
+
 }
 }
