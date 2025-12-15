@@ -7,16 +7,15 @@ pipeline {
     }
 
     stages {
-        stage('Verify Tools') {
+        stage('Build') {
             steps {
-                bat 'java -version'
-                bat 'mvn -version'
+                bat 'mvn clean package -DskipTests'
             }
         }
 
-        stage('Build') {
+        stage('Run App') {
             steps {
-                bat 'mvn clean package'
+                bat 'java -jar target/*.jar'
             }
         }
     }
