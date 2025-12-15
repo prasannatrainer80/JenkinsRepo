@@ -13,10 +13,9 @@ pipeline {
             }
         }
 
-        stage('Run App') {
-            steps {
-                bat 'java -jar target/*.jar'
-            }
-        }
-    }
+       stage('Run App') {
+    	steps {
+        	bat 'java -jar target\\SbJenkinsDemo-0.0.1-SNAPSHOT.jar'
+    	}
+   }
 }
