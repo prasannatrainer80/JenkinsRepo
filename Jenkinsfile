@@ -9,7 +9,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'mvn clean package -DskipTests'
+                bat 'mvn clean package'
+            }
+        }
+
+        stage('Run App') {
+            steps {
+                bat 'java -jar target/*.jar'
             }
         }
     }
