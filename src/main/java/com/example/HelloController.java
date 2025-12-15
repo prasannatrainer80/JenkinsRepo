@@ -10,4 +10,14 @@ public class HelloController {
     public String sayHelo() {
         return "Welcome to Spring Boot...";
     }
+
+    @GetMapping(value="/company")
+    public String company() {
+        return "From Virtusa...";
+    }
+
+    @GetMapping(value="/trainer")
+    public String trainer() {
+        return "Trainer Prasanna Pappu...";
+    }
 }
