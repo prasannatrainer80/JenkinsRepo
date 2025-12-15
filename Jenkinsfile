@@ -13,10 +13,11 @@ pipeline {
             }
         }
 
-        stage('Run App') {
-            steps {
-                bat 'cmd /k start "" java -jar target\\SbJenkinsDemo-0.0.1-SNAPSHOT.jar'
-            }
-        }
+       stage('Run App') {
+    	steps {
+        	bat 'mvn spring-boot:run'
+    		}
+	}
+
     }
 }
