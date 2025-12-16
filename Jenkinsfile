@@ -13,12 +13,14 @@ pipeline {
             }
         }
          stage('Run App') {
-            steps {
-                bat '''
-                cmd /c java -jar target\\SbJenkinsDemo-0.0.1-SNAPSHOT.jar
-                '''
-            }
-        }
+    steps {
+        bat '''
+        start "" java -jar target\\SbJenkinsDemo-0.0.1-SNAPSHOT.jar
+        timeout /t 10
+        '''
+    }
+}
+
     }
 	
 }
