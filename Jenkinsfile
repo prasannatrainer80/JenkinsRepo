@@ -16,8 +16,7 @@ pipeline {
     steps {
         bat '''
         start "" java -jar target\\SbJenkinsDemo-0.0.1-SNAPSHOT.jar
-        timeout /t 10 /nobreak
-        '''
+               '''
     }
 }
 
